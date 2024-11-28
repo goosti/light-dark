@@ -32,18 +32,6 @@
             localStorage.setItem("theme", isDark ? "light" : "dark");
         });
 
-        btn.addEventListener("click", function(){
-            const isLight = document.body.style.background === "#fff";
-
-            document.body.style.background = isLight ? "#121212" : "#fff";
-            
-            document.body.style.color = isLight ? "#fff" : "#000";
-            
-            btn.textContent = isLight ? "Mode sombre" : "Mode clair";
-
-            localStorage.setItem("theme", isLight ? "dark" : "light");
-        })
-            
         
 
     </script>
