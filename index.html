@@ -1,0 +1,52 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Débugger</title>
+</head>
+
+<body>
+    <h1>Code à débugger</h1>
+
+    <button id="toggle">Toggle Mode</button>
+
+    <script>
+        const btn = document.querySelector("#toggle");
+
+        // Récupération du mode
+        const mode = localStorage.getItem("theme") || "light";
+
+        // Ajout du mode sur la page
+
+
+        btn.addEventListener("click", function () {
+            const isDark = document.body.style.background === "#121212";
+
+            document.body.style.background = isDark ? "#fff" : "#121212";
+            
+            document.body.style.color = isDark ? "#000" : "#fff";
+            
+            btn.textContent = isDark ? "Mode clair" : "Mode sombre";
+
+            localStorage.setItem("theme", isDark ? "light" : "dark");
+        });
+
+        btn.addEventListener("click", function(){
+            const isLight = document.body.style.background === "#fff";
+
+            document.body.style.background = isLight ? "#121212" : "#fff";
+            
+            document.body.style.color = isLight ? "#fff" : "#000";
+            
+            btn.textContent = isLight ? "Mode sombre" : "Mode clair";
+
+            localStorage.setItem("theme", isLight ? "dark" : "light");
+        })
+            
+        
+
+    </script>
+</body>
+
+</html>
